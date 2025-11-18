@@ -1,12 +1,33 @@
 # Quick Start Guide
 
-## Prerequisites
+## Choose Your Path
 
+### 🚀 Option 1: Google Colab (Recommended)
+
+**Use FREE T4 GPU - Train in 1-2 hours!**
+
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/farhan1301/Fine-Tuning-LLM/blob/main/colab/COLAB_QUICKSTART.ipynb)
+
+**Why Colab?**
+- ⚡ 10-20x faster than CPU (1-2 hrs vs 12-24 hrs)
+- 🆓 Free T4 GPU access
+- 📦 No local setup needed
+- 💾 Saves to Google Drive
+
+**Just click the badge above and follow the notebook!**
+
+See `colab/README.md` for detailed instructions.
+
+---
+
+### 💻 Option 2: Local Setup (CPU/GPU)
+
+**Prerequisites:**
 - Conda installed
 - 8GB+ RAM
 - 10GB free disk space
 
-## Setup (5 minutes)
+## Local Setup (5 minutes)
 
 ### 1. Environment is Ready ✅
 
