@@ -308,15 +308,3 @@ If you use this work, please cite:
   url={https://github.com/yourusername/brd-extraction}
 }
 ```
-
-## Contact
-
-For questions or collaboration:
-- GitHub Issues: [Create an issue](https://github.com/yourusername/brd-extraction/issues)
-- Email: your.email@example.com
-
----
-
-**Built with** ❤️ **using state-of-the-art LLM fine-tuning techniques**
-
-*This project showcases modern ML engineering practices: parameter-efficient fine-tuning, CPU optimization, synthetic data generation, production-ready validation, and comprehensive evaluation.*
