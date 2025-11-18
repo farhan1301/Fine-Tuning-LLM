@@ -35,98 +35,91 @@ The extracted data is validated using Pydantic schemas and can be used for downs
 
 ```
 Fine Tuning LLM/
-├── notebooks/
-│   ├── 01_setup.ipynb                 # Environment setup and model verification
-│   ├── 02_data_generation.ipynb       # Synthetic BRD generation with Claude/GPT-4
-│   ├── 03_data_preparation.ipynb      # Data formatting and validation
-│   ├── 04_training.ipynb              # QLoRA fine-tuning (main training)
-│   ├── 05_evaluation.ipynb            # Comprehensive model evaluation
-│   ├── 06_inference.ipynb             # Pydantic AI integration
-│   └── 07_demo.ipynb                  # Interactive Gradio demo
-├── data/
-│   ├── synthetic_brds/                # Generated BRD documents
-│   ├── processed/                     # Formatted training data
-│   └── splits/                        # Train/val/test splits
-├── models/
-│   ├── checkpoints/                   # Training checkpoints
-│   └── final/                         # Final fine-tuned model
-├── configs/
-│   └── setup_info.json                # Configuration details
-├── requirements.txt                    # Python dependencies
-├── app.py                             # Standalone Gradio app
-└── README.md                          # This file
+├── 📖 Documentation
+│   ├── README.md                      # This file - full documentation
+│   └── QUICKSTART.md                  # Quick start guide
+│
+├── ⚙️ Configuration
+│   ├── .env                          # Your API keys (fill this in!)
+│   ├── .env.example                  # Template for API keys
+│   ├── environment.yml               # Conda environment definition
+│   ├── requirements.txt              # Python dependencies
+│   └── setup.sh                      # Automated setup script
+│
+├── 📓 Notebooks (run in order)
+│   ├── 01_setup.ipynb                # Verify installation (10 min)
+│   ├── 02_data_generation.ipynb      # Generate synthetic BRDs (2-4 hrs)
+│   ├── 03_data_preparation.ipynb     # Format data (30 min)
+│   ├── 04_training.ipynb             # Fine-tune with QLoRA (12-24 hrs)
+│   ├── 05_evaluation.ipynb           # Evaluate performance (1-2 hrs)
+│   ├── 06_inference.ipynb            # Production inference (30 min)
+│   └── 07_demo.ipynb                 # Interactive demo (30 min)
+│
+├── 📊 Data (created during training)
+│   ├── synthetic_brds/               # Generated BRD documents
+│   ├── processed/                    # Formatted training data
+│   └── splits/                       # Train/val/test splits
+│
+├── 🤖 Models (created during training)
+│   ├── checkpoints/                  # Training checkpoints
+│   └── final/                        # Final fine-tuned model
+│
+├── configs/                          # Training configuration files
+└── app.py                            # Standalone Gradio demo app
 ```
 
 ## Installation
 
 ### Prerequisites
-- Python 3.10 or higher
+- Conda or Miniconda installed
 - 8GB+ RAM (16GB recommended)
 - ~10GB disk space for models and data
 
-### Setup
+### Quick Setup
 
-1. **Clone the repository**
+1. **Run the automated setup script:**
 ```bash
-git clone <your-repo-url>
 cd "Fine Tuning LLM"
+./setup.sh
 ```
 
-2. **Create virtual environment** (recommended)
+This creates the conda environment and installs all dependencies.
+
+2. **Configure API keys:**
+
+Edit `.env` file and add your keys:
 ```bash
-python -m venv venv
-source venv/bin/activate  # On Windows: venv\Scripts\activate
+HUGGINGFACE_TOKEN=your_token_here
+ANTHROPIC_API_KEY=your_key_here
 ```
 
-3. **Install dependencies**
+Get your keys:
+- Hugging Face: https://huggingface.co/settings/tokens
+  - Accept Llama 3.2 license: https://huggingface.co/meta-llama/Llama-3.2-1B
+- Anthropic: https://console.anthropic.com/
+
+3. **Activate and start:**
 ```bash
-pip install -r requirements.txt
+conda activate llm-finetuning
+export HUGGINGFACE_TOKEN="your_token"
+export ANTHROPIC_API_KEY="your_key"
+huggingface-cli login
+jupyter notebook
 ```
 
-4. **Set up Hugging Face access**
-   - Create account at [huggingface.co](https://huggingface.co)
-   - Accept Llama 3.2 license at [meta-llama/Llama-3.2-1B](https://huggingface.co/meta-llama/Llama-3.2-1B)
-   - Create access token at [Settings > Access Tokens](https://huggingface.co/settings/tokens)
-
-5. **Set up API keys** (for data generation)
-```bash
-export ANTHROPIC_API_KEY="your-key-here"  # or OpenAI API key
-```
+For detailed instructions, see `QUICKSTART.md`
 
 ## Quick Start
 
-### Option 1: Run All Notebooks Sequentially
+See `QUICKSTART.md` for step-by-step instructions.
 
-Start with `01_setup.ipynb` and work through each notebook in order:
-
+**TL;DR:**
 ```bash
-jupyter notebook notebooks/01_setup.ipynb
+conda activate llm-finetuning
+jupyter notebook  # Open notebooks/01_setup.ipynb
 ```
 
-### Option 2: Use Pre-trained Model (if available)
-
-```python
-from transformers import AutoModelForCausalLM, AutoTokenizer
-from peft import PeftModel
-
-# Load model
-base_model = AutoModelForCausalLM.from_pretrained("meta-llama/Llama-3.2-1B", ...)
-model = PeftModel.from_pretrained(base_model, "./models/final/llama-3.2-1b-brd-final")
-tokenizer = AutoTokenizer.from_pretrained("meta-llama/Llama-3.2-1B")
-
-# Extract from BRD
-from brd_extractor import BRDExtractor
-extractor = BRDExtractor(model, tokenizer)
-result = extractor.extract(brd_text)
-```
-
-### Option 3: Launch Demo
-
-```bash
-python app.py
-```
-
-Then open [http://127.0.0.1:7860](http://127.0.0.1:7860) in your browser.
+Run notebooks 01-07 in order. Training (notebook 04) takes 12-24 hours on CPU.
 
 ## Training Pipeline
 

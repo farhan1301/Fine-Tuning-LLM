@@ -1,47 +1,46 @@
 # Core Fine-Tuning Libraries
-transformers>=4.46.0
-peft>=0.13.0
-trl>=0.11.0
-bitsandbytes>=0.44.0
-accelerate>=0.34.0
+transformers>=4.40.0
+peft>=0.10.0
+trl>=0.8.0
+bitsandbytes>=0.41.0
+accelerate>=0.28.0
 torch>=2.0.0
 
 # Dataset Handling
-datasets>=3.0.0
+datasets>=2.14.0
 
 # Structured Output Generation
-outlines>=0.1.0
-pydantic>=2.9.0
-pydantic-ai>=0.0.14
+pydantic>=2.5.0
+pydantic-ai
 
 # Validation and Type Safety
-instructor>=1.5.0
+instructor
 
 # Data Generation and Augmentation
-anthropic>=0.39.0  # or openai for GPT-4
-faker>=30.8.0
+anthropic  # or openai for GPT-4
+faker
 
 # Jupyter and Visualization
-jupyter>=1.1.1
-ipywidgets>=8.1.0
-notebook>=7.0.0
-matplotlib>=3.8.0
-seaborn>=0.13.0
-plotly>=5.24.0
+jupyter
+ipywidgets
+notebook
+matplotlib
+seaborn
+plotly
 
 # Progress Tracking
-tqdm>=4.66.0
+tqdm
 
 # Demo Interface
-gradio>=4.44.0
-streamlit>=1.39.0
+gradio
+streamlit
 
 # Utilities
-pandas>=2.2.0
-numpy>=1.26.0
-scikit-learn>=1.5.0
-jsonschema>=4.23.0
+pandas
+numpy
+scikit-learn
+jsonschema
 
 # Optional: Logging and Monitoring
-tensorboard>=2.18.0
-wandb>=0.18.0  # Optional: if you want experiment tracking
+tensorboard
+# wandb  # Optional: if you want experiment tracking

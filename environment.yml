@@ -1,0 +1,54 @@
+name: llm-finetuning
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.10
+  - pip>=23.0
+  - jupyter>=1.0
+  - notebook>=7.0
+  - ipykernel>=6.25
+  - pip:
+      # Core Fine-Tuning Libraries
+      - transformers>=4.40.0
+      - peft>=0.10.0
+      - trl>=0.8.0
+      - bitsandbytes>=0.41.0
+      - accelerate>=0.28.0
+      - torch>=2.0.0
+
+      # Dataset Handling
+      - datasets>=3.0.0
+
+      # Structured Output Generation
+      - pydantic>=2.5.0
+      - pydantic-ai
+
+      # Validation and Type Safety
+      - instructor
+
+      # Data Generation and Augmentation
+      - anthropic
+      - faker
+
+      # Jupyter and Visualization
+      - ipywidgets
+      - matplotlib
+      - seaborn
+      - plotly
+
+      # Progress Tracking
+      - tqdm
+
+      # Demo Interface
+      - gradio
+      - streamlit
+
+      # Utilities
+      - pandas
+      - numpy
+      - scikit-learn
+      - jsonschema
+
+      # Optional: Logging and Monitoring
+      - tensorboard
