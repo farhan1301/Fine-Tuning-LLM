@@ -3,7 +3,7 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Python 3.10+](https://img.shields.io/badge/python-3.10+-blue.svg)](https://www.python.org/downloads/)
 [![Transformers](https://img.shields.io/badge/Transformers-4.46+-orange.svg)](https://huggingface.co/docs/transformers)
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/farhan1301/Fine-Tuning-LLM/blob/main/colab/COLAB_QUICKSTART.ipynb)
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/farhan1301/llm-brd-finetuning/blob/main/colab/COLAB_QUICKSTART.ipynb)
 
 A production-ready system for extracting structured project estimations from Business Requirements Documents (BRDs) using a fine-tuned Llama 3.2 1B model with state-of-the-art techniques.
 
@@ -14,7 +14,7 @@ A production-ready system for extracting structured project estimations from Bus
 - 🆓 Free T4 GPU access
 - 📦 No local setup needed
 
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/farhan1301/Fine-Tuning-LLM/blob/main/colab/COLAB_QUICKSTART.ipynb)
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/farhan1301/llm-brd-finetuning/blob/main/colab/COLAB_QUICKSTART.ipynb)
 
 **Option 2: Local Setup (CPU/GPU)**
 - Full control and privacy
@@ -48,7 +48,7 @@ The extracted data is validated using Pydantic schemas and can be used for downs
 ## Project Structure
 
 ```
-Fine Tuning LLM/
+llm-brd-finetuning/
 ├── 📖 Documentation
 │   ├── README.md                      # This file - full documentation
 │   └── QUICKSTART.md                  # Quick start guide
@@ -93,7 +93,7 @@ Fine Tuning LLM/
 
 1. **Run the automated setup script:**
 ```bash
-cd "Fine Tuning LLM"
+cd "llm-brd-finetuning"
 ./setup.sh
 ```
 

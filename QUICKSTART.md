@@ -6,7 +6,7 @@
 
 **Use FREE T4 GPU - Train in 1-2 hours!**
 
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/farhan1301/Fine-Tuning-LLM/blob/main/colab/COLAB_QUICKSTART.ipynb)
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/farhan1301/llm-brd-finetuning/blob/main/colab/COLAB_QUICKSTART.ipynb)
 
 **Why Colab?**
 - ⚡ 10-20x faster than CPU (1-2 hrs vs 12-24 hrs)
